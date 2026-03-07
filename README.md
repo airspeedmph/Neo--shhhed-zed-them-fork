@@ -18,23 +18,33 @@ Originally developed for Dart, tested across TypeScript, Python, and Rust.
 
 ## How it works
 
-**Five brightness planes, not a flat surface.** Every token sits at a specific depth in OKLCH lightness. Comments genuinely recede, accent colors float in the middle, and variables live brightest because that's what you're actually reading.
+Every color was computed in [OKLCH](https://oklch.com) — a perceptually uniform color space — not hand-picked in a color picker. Each accent color has a target lightness, and hue/chroma are preserved when adjusting brightness. The result is five brightness planes with clean gaps between them:
 
 | Plane | OKLCH L | Examples | Role |
 |-------|---------|----------|------|
 | Canvas | — | Background `#1e1e1e` | Disappears |
 | Recede | 0.50–0.53 | Comments `#6b6b6b`, Punctuation `#646464` | You know it's there, you don't read it |
 | Structural | 0.60–0.62 | Operators `#828282`, Keywords `#877b90`, Attributes `#7a8a7a` | Scaffolding |
-| Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#d37b81`, Properties `#969696` | The meaning layer |
+| Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#d37b81` | The meaning layer |
 | Reading | 0.76–0.82 | Variables `#b5b5b5`, Definitions `#8bc37b` | What you're actually reading |
 
-**Perceptual equality across accents.** Core accent colors (strings, numbers, functions) sit at OKLCH L ≈ 0.68; types at L ≈ 0.71. Differentiation comes from hue, not brightness. Your eye reads structure, not color noise.
+**Perceptual equality across accents.** Strings, numbers, and functions cluster at OKLCH L ≈ 0.68. Types sit at L ≈ 0.71. You tell them apart by hue, not by one being louder.
 
-**Low saturation, on purpose.** High saturation on dark backgrounds triggers the Helmholtz-Kohlrausch effect - colors look brighter than they actually are, and your eyes pay for it over an 8-hour session. Accents stay under 40% HSL saturation, with structural tokens (keywords, operators) under 10%.
+**Low saturation, on purpose.** High saturation on dark backgrounds triggers the Helmholtz–Kohlrausch effect — colors look brighter than they are, and your eyes pay for it over an 8-hour session. Accents stay under 40% HSL saturation; structural tokens under 10%.
 
-**Blue and red used sparingly.** Blue wavelengths (415-455 nm) cause the most retinal scatter. Red on dark backgrounds is the most fatiguing text color. Numbers are rose, functions are blue - both desaturated so they won't burn you out.
+**Blue and red used sparingly.** Short-wavelength blue (415–455 nm) causes the most retinal scatter. Red on dark backgrounds is the most fatiguing text color. Numbers are rose, functions are blue — both desaturated.
 
-**APCA contrast, not WCAG 2.x.** WCAG 2.x overstates contrast near black. APCA (the WCAG 3 draft algorithm) is perceptually accurate for dark themes - reading-plane text targets Lc 75-90 for sustained reading without halation. Semantic accents sit at Lc 55-70, high enough for comfortable identification.
+**APCA contrast, not WCAG 2.x.** WCAG 2.x overstates contrast near black. APCA (the WCAG 3 draft algorithm) is perceptually accurate for dark themes — reading-plane text targets Lc 75–90, semantic accents sit at Lc 55–70.
+
+## Beyond syntax
+
+163 style tokens. Full coverage of Zed's UI surface — not just syntax highlighting.
+
+- **Git gutter & diffs** — added/modified/deleted indicators, word-level diff highlighting, merge conflict markers (ours vs theirs)
+- **Search** — passive matches are subtle, the active match stands out
+- **Debugger** — active line highlight and accent color
+- **Minimap & scrollbar** — three-state thumb (idle, hover, active), all neutral
+- **Status colors** — green for success, amber for warnings, orange for conflicts, rose for errors. No ambiguity.
 
 ## Palette
 
@@ -50,14 +60,14 @@ Originally developed for Dart, tested across TypeScript, Python, and Rust.
 
 ## Sources
 
-The palette is informed by research, not eyeballing.
-
-- [APCA Contrast Algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) - W3C WCAG 3 working draft
-- [Display Color Mode and Visual Fatigue](https://ieeexplore.ieee.org/document/9363189/) - IEEE Access, 2021
-- [Effect of Text Color on Visual Fatigue](https://pmc.ncbi.nlm.nih.gov/articles/PMC11175232/) - PMC, 2024
-- [Blue Light and Ocular Hazards](https://pmc.ncbi.nlm.nih.gov/articles/PMC9938358/) - PMC, 2023
-- [Solarized Color Scheme](https://en.wikipedia.org/wiki/Solarized_(color_scheme)) - CIELab-based perceptual uniformity
-- [Syntax Highlighting Done Right](https://tonsky.me/blog/syntax-highlighting/) - Tonsky, cognitive load analysis
+- [APCA Contrast Algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) — W3C WCAG 3 working draft. Used for contrast targets instead of WCAG 2.x.
+- [OKLCH Color Space](https://oklch.com) — perceptually uniform lightness. Every accent color computed here, not in a color picker.
+- [Helmholtz–Kohlrausch effect](https://en.wikipedia.org/wiki/Helmholtz%E2%80%93Kohlrausch_effect) — why high saturation on dark backgrounds causes perceived brightness spikes.
+- [Display Color Mode and Visual Fatigue](https://ieeexplore.ieee.org/document/9363189/) — IEEE Access, 2021
+- [Effect of Text Color on Visual Fatigue](https://pmc.ncbi.nlm.nih.gov/articles/PMC11175232/) — PMC, 2024
+- [Blue Light and Ocular Hazards](https://pmc.ncbi.nlm.nih.gov/articles/PMC9938358/) — PMC, 2023
+- [Solarized](https://en.wikipedia.org/wiki/Solarized_(color_scheme)) — CIELab-based perceptual uniformity, prior art for computed palettes.
+- [Syntax Highlighting Done Right](https://tonsky.me/blog/syntax-highlighting/) — Tonsky. Cognitive load analysis for syntax coloring.
 
 ## Install
 
