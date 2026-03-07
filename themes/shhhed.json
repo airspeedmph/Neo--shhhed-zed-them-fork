@@ -144,7 +144,7 @@
           "#729bcf",
           "#877b90",
           "#bc8f48",
-          "#d37b81",
+          "#ca8489",
           "#6ca880"
         ],
         "players": [
@@ -164,9 +164,9 @@
             "selection": "#bc8f4818"
           },
           {
-            "cursor": "#d37b81",
-            "background": "#d37b8124",
-            "selection": "#d37b8118"
+            "cursor": "#ca8489",
+            "background": "#ca848924",
+            "selection": "#ca848918"
           },
           {
             "cursor": "#729bcf",
@@ -194,7 +194,7 @@
             "color": "#7a8a7a"
           },
           "boolean": {
-            "color": "#d37b81"
+            "color": "#ca8489"
           },
           "comment": {
             "color": "#6b6b6b",
@@ -205,7 +205,7 @@
             "font_style": "italic"
           },
           "constant": {
-            "color": "#d37b81"
+            "color": "#ca8489"
           },
           "constructor": {
             "color": "#60b1b1"
@@ -256,7 +256,7 @@
             "color": "#6ca880"
           },
           "number": {
-            "color": "#d37b81"
+            "color": "#ca8489"
           },
           "operator": {
             "color": "#828282"
@@ -273,7 +273,7 @@
             "color": "#c5c5c5"
           },
           "property": {
-            "color": "#969696"
+            "color": "#8c8c8c"
           },
           "punctuation": {
             "color": "#646464"
@@ -332,10 +332,10 @@
             "color": "#a0a0a0"
           },
           "variable.parameter": {
-            "color": "#a89a90"
+            "color": "#929292"
           },
           "variable.special": {
-            "color": "#a89898"
+            "color": "#958f9a"
           },
           "variant": {
             "color": "#60b1b1"

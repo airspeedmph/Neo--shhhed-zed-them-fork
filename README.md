@@ -10,27 +10,27 @@ Originally developed for Dart, tested across TypeScript, Python, and Rust.
 
 ## Why this one
 
-- **Neutral gray background** - pure `#1e1e1e`, zero tint. No blue cast, no warm lean. Night Shift and f.lux can shift hues all they want - on a truly neutral canvas, your accent colors still separate cleanly.
+- **Neutral gray background** - editor canvas is `#1e1e1e`, chrome is `#1a1a1a`, all pure gray with zero tint. No blue cast, no warm lean. Night Shift and f.lux can shift hues all they want - on a truly neutral canvas, your accent colors still separate cleanly.
 - **Keywords stay quiet** - `if`, `return`, `final` are muted purple at low brightness. They're scaffolding, not content. You already know they're there.
-- **Types and functions are easy to tell apart** - teal vs blue, different hues at the same perceptual brightness. Neither one pulls your eye first; you pick them apart by color, not by one being louder.
+- **Types and functions are easy to tell apart** - teal vs blue, different hues at similar perceptual brightness (L 0.71 vs 0.68). You pick them apart by color, not by one being louder.
 - **Brighter = more important** - five brightness planes from comments (recede) to variables (reading plane). Punctuation disappears.
-- **Won't fry your eyes** - low saturation, APCA-targeted contrast, blue and red used sparingly. Built on actual research about dark-mode visual fatigue, not vibes.
+- **Won't fry your eyes** - moderate saturation, APCA-targeted contrast, blue and red used sparingly. Built on actual research about dark-mode visual fatigue, not vibes.
 
 ## How it works
 
-Every color was computed in [OKLCH](https://oklch.com) — a perceptually uniform color space — not hand-picked in a color picker. Each accent color has a target lightness, and hue/chroma are preserved when adjusting brightness. The result is five brightness planes with clean gaps between them:
+Every color was computed in [OKLCH](https://oklch.com) — a perceptually uniform color space — not hand-picked in a color picker. Each accent color has a target lightness, and hue/chroma are preserved when adjusting brightness. The result is five brightness planes:
 
 | Plane | OKLCH L | Examples | Role |
 |-------|---------|----------|------|
-| Canvas | — | Background `#1e1e1e` | Disappears |
-| Recede | 0.50–0.53 | Comments `#6b6b6b`, Punctuation `#646464` | You know it's there, you don't read it |
+| Canvas | — | Editor `#1e1e1e`, chrome `#1a1a1a` | Disappears |
+| Recede | 0.50–0.56 | Comments `#6b6b6b`, Punctuation `#646464` | You know it's there, you don't read it |
 | Structural | 0.60–0.62 | Operators `#828282`, Keywords `#877b90`, Attributes `#7a8a7a` | Scaffolding |
-| Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#d37b81` | The meaning layer |
+| Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#ca8489` | The meaning layer |
 | Reading | 0.76–0.82 | Variables `#b5b5b5`, Definitions `#8bc37b` | What you're actually reading |
 
 **Perceptual equality across accents.** Strings, numbers, and functions cluster at OKLCH L ≈ 0.68. Types sit at L ≈ 0.71. You tell them apart by hue, not by one being louder.
 
-**Low saturation, on purpose.** High saturation on dark backgrounds triggers the Helmholtz–Kohlrausch effect — colors look brighter than they are, and your eyes pay for it over an 8-hour session. Accents stay under 40% HSL saturation; structural tokens under 10%.
+**Moderate saturation, on purpose.** High saturation on dark backgrounds triggers the Helmholtz–Kohlrausch effect — colors look brighter than they are, and your eyes pay for it over an 8-hour session. Accents stay under 50% HSL saturation (four of six under 40%); structural tokens under 10%.
 
 **Blue and red used sparingly.** Short-wavelength blue (415–455 nm) causes the most retinal scatter. Red on dark backgrounds is the most fatiguing text color. Numbers are rose, functions are blue — both desaturated.
 
@@ -38,7 +38,7 @@ Every color was computed in [OKLCH](https://oklch.com) — a perceptually unifor
 
 ## Beyond syntax
 
-163 style tokens. Full coverage of Zed's UI surface — not just syntax highlighting.
+207 style tokens. Full coverage of Zed's UI surface — not just syntax highlighting.
 
 - **Git gutter & diffs** — added/modified/deleted indicators, word-level diff highlighting, merge conflict markers (ours vs theirs)
 - **Search** — passive matches are subtle, the active match stands out
@@ -54,7 +54,7 @@ Every color was computed in [OKLCH](https://oklch.com) — a perceptually unifor
 | Definitions | ![#8bc37b](https://placehold.co/16x16/8bc37b/8bc37b) | `#8bc37b` |
 | Functions | ![#729bcf](https://placehold.co/16x16/729bcf/729bcf) | `#729bcf` |
 | Strings | ![#bc8f48](https://placehold.co/16x16/bc8f48/bc8f48) | `#bc8f48` |
-| Numbers | ![#d37b81](https://placehold.co/16x16/d37b81/d37b81) | `#d37b81` |
+| Numbers | ![#ca8489](https://placehold.co/16x16/ca8489/ca8489) | `#ca8489` |
 | Keywords | ![#877b90](https://placehold.co/16x16/877b90/877b90) | `#877b90` |
 | Background | ![#1e1e1e](https://placehold.co/16x16/1e1e1e/1e1e1e) | `#1e1e1e` |
 
