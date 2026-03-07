@@ -1,7 +1,7 @@
 id = "shhhed-theme"
 name = "shhhed"
-version = "1.1.0"
+version = "1.1.1"
 schema_version = 1
 authors = ["mkhamat"]
-description = "🤫 Dark theme where keywords shut up and types actually stand out. Neutral gray, no tint."
+description = "🤫 Dark theme that dims the scaffolding and colors what matters."
 repository = "https://github.com/mkhamat/shhhed"

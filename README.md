@@ -2,23 +2,15 @@
 
 A dark theme for [Zed](https://zed.dev) that doesn't fight for your attention.
 
-Most dark themes go one of two ways: everything is colorful and loud, or everything is gray and flat. shhh does neither. Types and functions get real color. Keywords like `final` and `return` shut up - they're on every line anyway. You end up reading your code instead of its syntax.
+Most dark themes are either colorful and loud, or gray and flat. shhhed gives real color to types and functions while keywords stay quiet — they're on every line anyway. You end up reading your code instead of its syntax.
 
 Originally developed for Dart, tested across TypeScript, Python, and Rust.
 
-![shhh-preview](preview.png?v=2)
+![shhhed-preview](preview.png?v=2)
 
-## Why this one
+## Design
 
-- **Neutral gray background** - editor canvas is `#1e1e1e`, chrome is `#1a1a1a`, all pure gray with zero tint. No blue cast, no warm lean. Night Shift and f.lux can shift hues all they want - on a truly neutral canvas, your accent colors still separate cleanly.
-- **Keywords stay quiet** - `if`, `return`, `final` are muted purple at low brightness. They're scaffolding, not content. You already know they're there.
-- **Types and functions are easy to tell apart** - teal vs blue, different hues at similar perceptual brightness (L 0.71 vs 0.68). You pick them apart by color, not by one being louder.
-- **Brighter = more important** - five brightness planes from comments (recede) to variables (reading plane). Punctuation disappears.
-- **Won't fry your eyes** - moderate saturation, APCA-targeted contrast, blue and red used sparingly. Built on actual research about dark-mode visual fatigue, not vibes.
-
-## How it works
-
-Every color was computed in [OKLCH](https://oklch.com) — a perceptually uniform color space — not hand-picked in a color picker. Each accent color has a target lightness, and hue/chroma are preserved when adjusting brightness. The result is five brightness planes:
+Colors are assigned to five brightness levels based on how much they matter to reading:
 
 | Plane | OKLCH L | Examples | Role |
 |-------|---------|----------|------|
@@ -28,23 +20,23 @@ Every color was computed in [OKLCH](https://oklch.com) — a perceptually unifor
 | Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#ca8489` | The meaning layer |
 | Reading | 0.76–0.82 | Variables `#b5b5b5`, Definitions `#8bc37b` | What you're actually reading |
 
-**Perceptual equality across accents.** Strings, numbers, and functions cluster at OKLCH L ≈ 0.68. Types sit at L ≈ 0.71. You tell them apart by hue, not by one being louder.
+Properties and parameters (`property`, `variable.parameter`, `variable.special`) form a gradient between Structural and Semantic (L 0.64–0.66) — they carry some meaning but aren't the primary reading target.
 
-**Moderate saturation, on purpose.** High saturation on dark backgrounds triggers the Helmholtz–Kohlrausch effect — colors look brighter than they are, and your eyes pay for it over an 8-hour session. Accents stay under 50% HSL saturation (four of six under 40%); structural tokens under 10%.
+- **Neutral gray canvas** — editor `#1e1e1e`, chrome `#1a1a1a`, zero tint. No blue cast, no warm lean. Works cleanly with Night Shift and f.lux.
+- **OKLCH-computed palette** — every accent color was computed in [OKLCH](https://oklch.com), a perceptually uniform color space. Accents at the same brightness level are told apart by hue, not by one being louder.
+- **Moderate saturation** — accents stay under 50% HSL saturation (four of six under 40%). High saturation on dark backgrounds makes colors look brighter than they are and adds strain over long sessions.
+- **APCA contrast targets** — contrast is based on the [APCA algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) (WCAG 3 draft), which is perceptually accurate for dark themes. Reading-plane text targets Lc 75–90, semantic accents sit at Lc 55–70.
 
-**Blue and red used sparingly.** Short-wavelength blue (415–455 nm) causes the most retinal scatter. Red on dark backgrounds is the most fatiguing text color. Numbers are rose, functions are blue — both desaturated.
+## UI coverage
 
-**APCA contrast, not WCAG 2.x.** WCAG 2.x overstates contrast near black. APCA (the WCAG 3 draft algorithm) is perceptually accurate for dark themes — reading-plane text targets Lc 75–90, semantic accents sit at Lc 55–70.
-
-## Beyond syntax
-
-207 style tokens. Full coverage of Zed's UI surface — not just syntax highlighting.
+Covers the full Zed UI surface, not just syntax highlighting.
 
 - **Git gutter & diffs** — added/modified/deleted indicators, word-level diff highlighting, merge conflict markers (ours vs theirs)
 - **Search** — passive matches are subtle, the active match stands out
 - **Debugger** — active line highlight and accent color
 - **Minimap & scrollbar** — three-state thumb (idle, hover, active), all neutral
-- **Status colors** — green for success, amber for warnings, orange for conflicts, rose for errors. No ambiguity.
+- **Terminal** — full 16-color ANSI palette with bright and dim variants
+- **Status colors** — green for success, amber for warnings, orange for conflicts, rose for errors
 
 ## Palette
 
@@ -58,16 +50,16 @@ Every color was computed in [OKLCH](https://oklch.com) — a perceptually unifor
 | Keywords | ![#877b90](https://placehold.co/16x16/877b90/877b90) | `#877b90` |
 | Background | ![#1e1e1e](https://placehold.co/16x16/1e1e1e/1e1e1e) | `#1e1e1e` |
 
-## Sources
+## Further reading
 
-- [APCA Contrast Algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) — W3C WCAG 3 working draft. Used for contrast targets instead of WCAG 2.x.
-- [OKLCH Color Space](https://oklch.com) — perceptually uniform lightness. Every accent color computed here, not in a color picker.
-- [Helmholtz–Kohlrausch effect](https://en.wikipedia.org/wiki/Helmholtz%E2%80%93Kohlrausch_effect) — why high saturation on dark backgrounds causes perceived brightness spikes.
+- [APCA Contrast Algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) — W3C WCAG 3 working draft
+- [OKLCH Color Space](https://oklch.com) — perceptually uniform lightness
+- [Helmholtz–Kohlrausch effect](https://en.wikipedia.org/wiki/Helmholtz%E2%80%93Kohlrausch_effect) — why high saturation on dark backgrounds causes perceived brightness spikes
 - [Display Color Mode and Visual Fatigue](https://ieeexplore.ieee.org/document/9363189/) — IEEE Access, 2021
 - [Effect of Text Color on Visual Fatigue](https://pmc.ncbi.nlm.nih.gov/articles/PMC11175232/) — PMC, 2024
 - [Blue Light and Ocular Hazards](https://pmc.ncbi.nlm.nih.gov/articles/PMC9938358/) — PMC, 2023
-- [Solarized](https://en.wikipedia.org/wiki/Solarized_(color_scheme)) — CIELab-based perceptual uniformity, prior art for computed palettes.
-- [Syntax Highlighting Done Right](https://tonsky.me/blog/syntax-highlighting/) — Tonsky. Cognitive load analysis for syntax coloring.
+- [Solarized](https://en.wikipedia.org/wiki/Solarized_(color_scheme)) — prior art for computed palettes using CIELab
+- [Syntax Highlighting Done Right](https://tonsky.me/blog/syntax-highlighting/) — Tonsky, cognitive load analysis for syntax coloring
 
 ## Install
 
