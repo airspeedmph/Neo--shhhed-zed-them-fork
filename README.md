@@ -73,7 +73,7 @@ Covers the full Zed UI surface, not just syntax highlighting.
 
 ## Install
 
-Search for "shhhed" in Zed extensions.
+[shhhed](https://zed.dev/extensions/shhhed-theme) in Zed extensions.
 
 ## License
 
