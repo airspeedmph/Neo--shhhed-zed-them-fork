@@ -6,7 +6,7 @@
 
 A dark theme for [Zed](https://zed.dev) that doesn't fight for your attention.
 
-Most dark themes are designed to be seen, not used. They look great in screenshots — vivid, bold, full of contrast — and something about them just feels off after a few hours. This theme built the other way around: enjoyable to look at, easy to scan, where the structure of the code comes through instead of the syntax dressing it up.
+Most dark themes are designed to be seen, not used. This one is built for the other thing — easy to scan, pleasant to look at, where the structure of the code comes through instead of the syntax around it.
 
 ![shhhed-preview](preview.png)
 
