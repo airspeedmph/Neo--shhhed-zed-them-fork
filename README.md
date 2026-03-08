@@ -6,9 +6,7 @@
 
 A dark theme for [Zed](https://zed.dev) that doesn't fight for your attention.
 
-Most dark themes are either colorful and loud, or gray and flat. shhhed gives real color to types and functions while keywords stay quiet — they're on every line anyway. You end up reading your code instead of its syntax.
-
-Originally developed for Dart, tested across TypeScript, Python, and Rust.
+Most dark themes are designed to be seen, not used. They look great in screenshots — vivid, bold, full of contrast — and something about them just feels off after a few hours. This theme built the other way around: enjoyable to look at, easy to scan, where the structure of the code comes through instead of the syntax dressing it up.
 
 ![shhhed-preview](preview.png)
 
@@ -18,11 +16,11 @@ Colors are assigned to five brightness levels based on how much they matter to r
 
 | Plane | OKLCH L | Examples | Role |
 |-------|---------|----------|------|
-| Canvas | — | Editor `#1e1e1e`, chrome `#1a1a1a` | Disappears |
-| Recede | 0.50–0.56 | Comments `#6b6b6b`, Punctuation `#646464` | You know it's there, you don't read it |
-| Structural | 0.60–0.62 | Operators `#828282`, Keywords `#877b90`, Attributes `#7a8a7a` | Scaffolding |
-| Semantic | 0.67–0.71 | Types `#60b1b1`, Functions `#729bcf`, Strings `#bc8f48`, Numbers `#ca8489` | The meaning layer |
-| Reading | 0.76–0.82 | Variables `#b5b5b5`, Definitions `#8bc37b` | What you're actually reading |
+| Canvas | — | Editor ![#1e1e1e](https://placehold.co/10x10/1e1e1e/1e1e1e) `#1e1e1e`, chrome ![#1a1a1a](https://placehold.co/10x10/1a1a1a/1a1a1a) `#1a1a1a` | Disappears |
+| Recede | 0.50–0.56 | Comments ![#6b6b6b](https://placehold.co/10x10/6b6b6b/6b6b6b) `#6b6b6b`, Punctuation ![#646464](https://placehold.co/10x10/646464/646464) `#646464` | You know it's there, you don't read it |
+| Structural | 0.60–0.62 | Operators ![#828282](https://placehold.co/10x10/828282/828282) `#828282`, Keywords ![#877b90](https://placehold.co/10x10/877b90/877b90) `#877b90`, Attributes ![#7a8a7a](https://placehold.co/10x10/7a8a7a/7a8a7a) `#7a8a7a` | Scaffolding |
+| Semantic | 0.67–0.71 | Types ![#60b1b1](https://placehold.co/10x10/60b1b1/60b1b1) `#60b1b1`, Functions ![#729bcf](https://placehold.co/10x10/729bcf/729bcf) `#729bcf`, Strings ![#bc8f48](https://placehold.co/10x10/bc8f48/bc8f48) `#bc8f48`, Numbers ![#ca8489](https://placehold.co/10x10/ca8489/ca8489) `#ca8489` | The meaning layer |
+| Reading | 0.76–0.82 | Variables ![#b5b5b5](https://placehold.co/10x10/b5b5b5/b5b5b5) `#b5b5b5`, Definitions ![#8bc37b](https://placehold.co/10x10/8bc37b/8bc37b) `#8bc37b` | What you're actually reading |
 
 Properties and parameters (`property`, `variable.parameter`, `variable.special`) form a gradient between Structural and Semantic (L 0.64–0.66) — they carry some meaning but aren't the primary reading target.
 
