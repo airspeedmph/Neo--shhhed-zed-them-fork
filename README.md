@@ -16,15 +16,15 @@ Colors are assigned to five brightness levels based on how much they matter to r
 
 | Plane | OKLCH L | Examples | Role |
 |-------|---------|----------|------|
-| Canvas | — | Editor ![#1e1e1e](https://placehold.co/10x10/1e1e1e/1e1e1e) `#1e1e1e`, chrome ![#1a1a1a](https://placehold.co/10x10/1a1a1a/1a1a1a) `#1a1a1a` | Disappears |
-| Recede | 0.50–0.56 | Comments ![#6b6b6b](https://placehold.co/10x10/6b6b6b/6b6b6b) `#6b6b6b`, Punctuation ![#646464](https://placehold.co/10x10/646464/646464) `#646464` | You know it's there, you don't read it |
-| Structural | 0.60–0.62 | Operators ![#828282](https://placehold.co/10x10/828282/828282) `#828282`, Keywords ![#877b90](https://placehold.co/10x10/877b90/877b90) `#877b90`, Attributes ![#7a8a7a](https://placehold.co/10x10/7a8a7a/7a8a7a) `#7a8a7a` | Scaffolding |
+| Canvas | — | Editor ![#1e1e22](https://placehold.co/10x10/1e1e22/1e1e22) `#1e1e22`, chrome ![#1a1a1e](https://placehold.co/10x10/1a1a1e/1a1a1e) `#1a1a1e` | Disappears |
+| Recede | 0.50–0.56 | Comments ![#757578](https://placehold.co/10x10/757578/757578) `#757578`, Punctuation ![#6c6c70](https://placehold.co/10x10/6c6c70/6c6c70) `#6c6c70` | You know it's there, you don't read it |
+| Structural | 0.60–0.62 | Operators ![#878787](https://placehold.co/10x10/878787/878787) `#878787`, Keywords ![#8d8196](https://placehold.co/10x10/8d8196/8d8196) `#8d8196`, Attributes ![#7a8a7a](https://placehold.co/10x10/7a8a7a/7a8a7a) `#7a8a7a` | Scaffolding |
 | Semantic | 0.67–0.71 | Types ![#60b1b1](https://placehold.co/10x10/60b1b1/60b1b1) `#60b1b1`, Functions ![#729bcf](https://placehold.co/10x10/729bcf/729bcf) `#729bcf`, Strings ![#bc8f48](https://placehold.co/10x10/bc8f48/bc8f48) `#bc8f48`, Numbers ![#ca8489](https://placehold.co/10x10/ca8489/ca8489) `#ca8489` | The meaning layer |
-| Reading | 0.76–0.82 | Variables ![#b5b5b5](https://placehold.co/10x10/b5b5b5/b5b5b5) `#b5b5b5`, Definitions ![#8bc37b](https://placehold.co/10x10/8bc37b/8bc37b) `#8bc37b` | What you're actually reading |
+| Reading | 0.76–0.82 | Variables ![#b8b8bc](https://placehold.co/10x10/b8b8bc/b8b8bc) `#b8b8bc`, Definitions ![#8bc37b](https://placehold.co/10x10/8bc37b/8bc37b) `#8bc37b` | What you're actually reading |
 
 Properties and parameters (`property`, `variable.parameter`, `variable.special`) form a gradient between Structural and Semantic (L 0.64–0.66) — they carry some meaning but aren't the primary reading target.
 
-- **Neutral gray canvas** — editor `#1e1e1e`, chrome `#1a1a1a`, zero tint. No blue cast, no warm lean. Works cleanly with Night Shift and f.lux.
+- **Near-neutral canvas** — editor `#1e1e22`, chrome `#1a1a1e`, near-neutral with imperceptible blue depth. Works cleanly with Night Shift and f.lux.
 - **OKLCH-computed palette** — every accent color was computed in [OKLCH](https://oklch.com), a perceptually uniform color space. Accents at the same brightness level are told apart by hue, not by one being louder.
 - **Moderate saturation** — accents stay under 50% HSL saturation (four of six under 40%). High saturation on dark backgrounds makes colors look brighter than they are and adds strain over long sessions.
 - **APCA contrast targets** — contrast is based on the [APCA algorithm](https://git.apcacontrast.com/documentation/APCA_in_a_Nutshell.html) (WCAG 3 draft), which is perceptually accurate for dark themes. Reading-plane text targets Lc 75–90, semantic accents sit at Lc 55–70.
@@ -55,8 +55,8 @@ Covers the full Zed UI surface, not just syntax highlighting.
 | Functions | ![#729bcf](https://placehold.co/16x16/729bcf/729bcf) | `#729bcf` |
 | Strings | ![#bc8f48](https://placehold.co/16x16/bc8f48/bc8f48) | `#bc8f48` |
 | Numbers | ![#ca8489](https://placehold.co/16x16/ca8489/ca8489) | `#ca8489` |
-| Keywords | ![#877b90](https://placehold.co/16x16/877b90/877b90) | `#877b90` |
-| Background | ![#1e1e1e](https://placehold.co/16x16/1e1e1e/1e1e1e) | `#1e1e1e` |
+| Keywords | ![#8d8196](https://placehold.co/16x16/8d8196/8d8196) | `#8d8196` |
+| Background | ![#1e1e22](https://placehold.co/16x16/1e1e22/1e1e22) | `#1e1e22` |
 
 ## Further reading
 
