@@ -144,7 +144,7 @@
           "#60b1b1",
           "#729bcf",
           "#877b90",
-          "#bc8f48",
+          "#bd9049",
           "#ca8489",
           "#6ca880"
         ],
@@ -198,7 +198,7 @@
             "color": "#ca8489"
           },
           "comment": {
-            "color": "#6a6a6e",
+            "color": "#6b6c70",
             "font_style": "italic"
           },
           "comment.doc": {
@@ -274,7 +274,7 @@
             "color": "#cbcbcf"
           },
           "property": {
-            "color": "#8e8c94"
+            "color": "#909094"
           },
           "punctuation": {
             "color": "#6c6c70"
@@ -292,10 +292,10 @@
             "color": "#8d8196"
           },
           "string": {
-            "color": "#bc8f48"
+            "color": "#bd9049"
           },
           "string.doc": {
-            "color": "#bc8f48",
+            "color": "#bd9049",
             "font_style": "italic"
           },
           "string.escape": {
@@ -314,7 +314,7 @@
             "color": "#918294"
           },
           "text.literal": {
-            "color": "#bc8f48"
+            "color": "#bd9049"
           },
           "title": {
             "color": "#c8c8cc",
@@ -330,13 +330,13 @@
             "color": "#b8b8bc"
           },
           "variable.member": {
-            "color": "#909096"
+            "color": "#909094"
           },
           "variable.parameter": {
-            "color": "#949498"
+            "color": "#909094"
           },
           "variable.special": {
-            "color": "#958f9a"
+            "color": "#8d8196"
           },
           "variant": {
             "color": "#c6a6be"
@@ -352,7 +352,7 @@
         "terminal.ansi.green": "#7db277",
         "terminal.ansi.yellow": "#c8a050",
         "terminal.ansi.blue": "#729bcf",
-        "terminal.ansi.magenta": "#877b90",
+        "terminal.ansi.magenta": "#91859a",
         "terminal.ansi.cyan": "#60b1b1",
         "terminal.ansi.white": "#c8c8cc",
         "terminal.ansi.bright_black": "#49494e",
