@@ -1,5 +1,7 @@
 ![shhhed-hero](hero.png)
 
+> Font: Iosevka SS14 (JetBrains Mono) 548 · Terminal: Iosevka Term SS10 · Tip: `"colorize_brackets": false`
+
 # shhhed
 
 A quiet dark theme for [Zed](https://zed.dev). Scaffolding recedes, meaning emerges.
